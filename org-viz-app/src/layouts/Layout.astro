@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style is:global>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0d;
+      --bg2: #141414;
+      --surface: #1a1a1a;
+      --surface2: #222222;
+      --border: #2a2a2a;
+      --border2: #333333;
+      --text: #f0ede8;
+      --text2: #9a9690;
+      --text3: #5a5753;
+      --accent-blue: #4a9eff;
+      --accent-teal: #2de8c0;
+      --accent-purple: #a78bfa;
+      --accent-amber: #f5a623;
+      --font-display: "Syne", sans-serif;
+      --font-body: "Instrument Sans", sans-serif;
+    }
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #444; }
+  </style>
+</head>
+<body>
+  <slot />
+</body>
+</html>
